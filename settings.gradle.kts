@@ -1,4 +1,10 @@
-include(":app", ":shared")
-rootProject.name = "Multiplatform Map"
+pluginManagement {
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+        maven(url = "https://dl.bintray.com/kotlin/kotlin-eap")
+    }
+}
 
-enableFeaturePreview("GRADLE_METADATA")
+include(":app", ":shared", ":web")
+rootProject.name = "mmapp"

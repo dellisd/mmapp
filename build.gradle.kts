@@ -4,6 +4,7 @@ buildscript {
     repositories {
         google()
         jcenter()
+        maven(url = "https://dl.bintray.com/kotlin/kotlin-eap")
     }
     dependencies {
         classpath("com.android.tools.build:gradle:4.1.0-alpha08")
@@ -18,9 +19,6 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven(url = "https://dl.bintray.com/kotlin/kotlin-eap")
     }
-}
-
-tasks.create<Delete>("clean") {
-    delete(rootProject.buildDir)
 }

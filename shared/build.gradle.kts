@@ -7,6 +7,8 @@ plugins {
 
 repositories {
     maven(url = "https://oss.sonatype.org/content/repositories/snapshots/")
+    maven(url = "https://dl.bintray.com/kotlin/kotlin-eap")
+    mavenLocal()
 }
 
 android {
@@ -52,6 +54,10 @@ kotlin {
     }
 
     android()
+
+    js {
+        browser()
+    }
 
     sourceSets["commonMain"].dependencies {
         implementation("org.jetbrains.kotlin:kotlin-stdlib-common")
