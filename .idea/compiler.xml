@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel>
-      <module name="mmapp.app" target="1.8" />
-      <module name="mmapp.shared" target="1.8" />
+    <bytecodeTargetLevel target="1.8">
       <module name="Multiplatform_Map.app" target="1.8" />
       <module name="Multiplatform_Map.shared" target="1.8" />
       <module name="Multiplatform_Map.shared.androidMain" target="1.6" />

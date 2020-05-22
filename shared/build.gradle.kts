@@ -56,6 +56,7 @@ kotlin {
     android()
 
     js {
+        useCommonJs()
         browser()
     }
 

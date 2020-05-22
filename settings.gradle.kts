@@ -6,5 +6,5 @@ pluginManagement {
     }
 }
 
-include(":app", ":shared", ":web")
+include(":app", ":shared"/*, ":web"*/)
 rootProject.name = "mmapp"
