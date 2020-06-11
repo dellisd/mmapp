@@ -35,6 +35,10 @@ android {
     tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
         kotlinOptions.jvmTarget = "1.8"
     }
+
+    packagingOptions {
+        exclude("META-INF/kotlinx-serialization-runtime.kotlin_module")
+    }
 }
 
 kotlin {
@@ -48,7 +52,7 @@ kotlin {
     iOSTarget("ios") {
         binaries {
             framework {
-                baseName = "shared"
+                baseName = "Shared"
             }
         }
     }
@@ -95,7 +99,7 @@ val packForXcode by tasks.creating(Sync::class) {
                 + "export 'JAVA_HOME=${System.getProperty("java.home")}'\n"
                 + "cd '${rootProject.rootDir}'\n"
                 + "./gradlew \$@\n")
-        gradlew.setExecutable(true)
+        gradlew.setExecutable(true, false)
     }
 }
 

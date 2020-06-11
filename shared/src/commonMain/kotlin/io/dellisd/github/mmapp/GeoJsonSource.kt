@@ -4,7 +4,7 @@ import io.github.dellisd.spatialk.geojson.Feature
 import io.github.dellisd.spatialk.geojson.FeatureCollection
 import io.github.dellisd.spatialk.geojson.Geometry
 
-expect class GeoJsonSource(id: String) {
+expect class GeoJsonSource(sourceId: String) {
 
     val sourceId: String
 
