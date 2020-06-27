@@ -55,6 +55,15 @@ kotlin {
                 baseName = "Shared"
             }
         }
+        compilations.getByName("main") {
+            cinterops.create("Mapbox") {
+                defFile(project.file("src/iosMain/defs/Mapbox.def"))
+
+                val frameworks = listOf(project.file("../ios/Pods/Mapbox-iOS-SDK/dynamic"))
+                val frameworkOpts = frameworks.map { "-F${it.path}" }
+                compilerOpts(*frameworkOpts.toTypedArray())
+            }
+        }
     }
 
     android()
@@ -73,6 +82,10 @@ kotlin {
     sourceSets["androidMain"].dependencies {
         implementation("org.jetbrains.kotlin:kotlin-stdlib")
         api("com.mapbox.mapboxsdk:mapbox-android-sdk:9.2.0")
+    }
+
+    sourceSets["iosMain"].dependencies {
+        implementation("org.jetbrains.kotlin.native.xcode:kotlin-native-xcode-11-4-workaround:1.3.72.0")
     }
 }
 
@@ -95,10 +108,12 @@ val packForXcode by tasks.creating(Sync::class) {
     /// generate a helpful ./gradlew wrapper with embedded Java path
     doLast {
         val gradlew = File(targetDir, "gradlew")
-        gradlew.writeText("#!/bin/bash\n"
-                + "export 'JAVA_HOME=${System.getProperty("java.home")}'\n"
-                + "cd '${rootProject.rootDir}'\n"
-                + "./gradlew \$@\n")
+        gradlew.writeText(
+            "#!/bin/bash\n"
+                    + "export 'JAVA_HOME=${System.getProperty("java.home")}'\n"
+                    + "cd '${rootProject.rootDir}'\n"
+                    + "./gradlew \$@\n"
+        )
         gradlew.setExecutable(true, false)
     }
 }

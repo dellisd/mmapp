@@ -1,0 +1,6 @@
+platform :ios, '13.5'
+use_frameworks!
+
+target 'mmapp' do
+    pod 'Mapbox-iOS-SDK' => '~> 5.9'
+end

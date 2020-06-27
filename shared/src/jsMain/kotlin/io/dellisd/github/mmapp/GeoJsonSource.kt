@@ -6,9 +6,8 @@ import io.github.dellisd.spatialk.geojson.Geometry
 import io.github.dellisd.spatialk.geojson.dsl.geometryCollection
 
 @JsExport
-actual class GeoJsonSource actual constructor(val id: String) {
+actual class GeoJsonSource actual constructor(actual val sourceId: String, features: FeatureCollection?) {
     val type = "geojson"
-    actual val sourceId: String get() = id
     var data: dynamic = null
 
     actual fun setGeoJson(feature: Feature) {

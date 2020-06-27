@@ -7,10 +7,11 @@
 //
 
 import SwiftUI
+import Mapbox
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        MapView().centerCoordinate(.init(latitude: 45.3846, longitude: -75.7003)).zoomLevel(16)
     }
 }
 

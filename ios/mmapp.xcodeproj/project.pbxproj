@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4FD8FC736120868BEA3820AD /* Pods_mmapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A71DB3B1E25C2CB53186142 /* Pods_mmapp.framework */; };
+		6503729E249422EF00D50066 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65441A4F2491BEB8009BECF8 /* Shared.framework */; };
+		6503729F249422EF00D50066 /* Shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 65441A4F2491BEB8009BECF8 /* Shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		650372A2249461DA00D50066 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650372A1249461DA00D50066 /* MapView.swift */; };
 		653C85A9249047DF00135C1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653C85A8249047DF00135C1C /* AppDelegate.swift */; };
 		653C85AB249047DF00135C1C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653C85AA249047DF00135C1C /* SceneDelegate.swift */; };
 		653C85AD249047DF00135C1C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653C85AC249047DF00135C1C /* ContentView.swift */; };
@@ -15,8 +19,7 @@
 		653C85B5249047E200135C1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653C85B3249047E200135C1C /* LaunchScreen.storyboard */; };
 		653C85C0249047E200135C1C /* mmappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653C85BF249047E200135C1C /* mmappTests.swift */; };
 		653C85CB249047E200135C1C /* mmappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653C85CA249047E200135C1C /* mmappUITests.swift */; };
-		65441A502491BEB8009BECF8 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65441A4F2491BEB8009BECF8 /* Shared.framework */; };
-		65441A512491BEB8009BECF8 /* Shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 65441A4F2491BEB8009BECF8 /* Shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		655C95692492E6AF00D769FD /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,13 +40,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		65441A522491BEB8009BECF8 /* Embed Frameworks */ = {
+		655C956A2492E6AF00D769FD /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				65441A512491BEB8009BECF8 /* Shared.framework in Embed Frameworks */,
+				655C95692492E6AF00D769FD /* (null) in Embed Frameworks */,
+				6503729F249422EF00D50066 /* Shared.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,6 +55,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		650372A1249461DA00D50066 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		653C85A5249047DE00135C1C /* mmapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mmapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		653C85A8249047DF00135C1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		653C85AA249047DF00135C1C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +72,9 @@
 		653C85CC249047E200135C1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65441A472491A9DB009BECF8 /* shared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = shared.framework; path = "../shared/build/xcode-frameworks/shared.framework"; sourceTree = "<group>"; };
 		65441A4F2491BEB8009BECF8 /* Shared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Shared.framework; path = "../shared/build/xcode-frameworks/Shared.framework"; sourceTree = "<group>"; };
+		6DE84DCEDDD4F8FF438B485B /* Pods-mmapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mmapp.release.xcconfig"; path = "Target Support Files/Pods-mmapp/Pods-mmapp.release.xcconfig"; sourceTree = "<group>"; };
+		708E695296E03DEFB3587CAF /* Pods-mmapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mmapp.debug.xcconfig"; path = "Target Support Files/Pods-mmapp/Pods-mmapp.debug.xcconfig"; sourceTree = "<group>"; };
+		8A71DB3B1E25C2CB53186142 /* Pods_mmapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mmapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +82,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65441A502491BEB8009BECF8 /* Shared.framework in Frameworks */,
+				4FD8FC736120868BEA3820AD /* Pods_mmapp.framework in Frameworks */,
+				6503729E249422EF00D50066 /* Shared.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +104,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5056983F16415F011A303E36 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				708E695296E03DEFB3587CAF /* Pods-mmapp.debug.xcconfig */,
+				6DE84DCEDDD4F8FF438B485B /* Pods-mmapp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		653C859C249047DE00135C1C = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +121,7 @@
 				653C85C9249047E200135C1C /* mmappUITests */,
 				653C85A6249047DE00135C1C /* Products */,
 				65441A462491A9DB009BECF8 /* Frameworks */,
+				5056983F16415F011A303E36 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +138,7 @@
 		653C85A7249047DE00135C1C /* mmapp */ = {
 			isa = PBXGroup;
 			children = (
+				650372A1249461DA00D50066 /* MapView.swift */,
 				653C85A8249047DF00135C1C /* AppDelegate.swift */,
 				653C85AA249047DF00135C1C /* SceneDelegate.swift */,
 				653C85AC249047DF00135C1C /* ContentView.swift */,
@@ -161,6 +181,7 @@
 			children = (
 				65441A4F2491BEB8009BECF8 /* Shared.framework */,
 				65441A472491A9DB009BECF8 /* shared.framework */,
+				8A71DB3B1E25C2CB53186142 /* Pods_mmapp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -172,11 +193,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 653C85CF249047E200135C1C /* Build configuration list for PBXNativeTarget "mmapp" */;
 			buildPhases = (
-				65441A4B2491AA80009BECF8 /* ShellScript */,
+				8163E5B94206EF1D754F4235 /* [CP] Check Pods Manifest.lock */,
 				653C85A1249047DE00135C1C /* Sources */,
 				653C85A2249047DE00135C1C /* Frameworks */,
 				653C85A3249047DE00135C1C /* Resources */,
-				65441A522491BEB8009BECF8 /* Embed Frameworks */,
+				655C956A2492E6AF00D769FD /* Embed Frameworks */,
+				5A86422CAE3C40CA46941F6F /* [CP] Embed Pods Frameworks */,
+				650372A0249422F800D50066 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -235,6 +258,7 @@
 				TargetAttributes = {
 					653C85A4249047DE00135C1C = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 					653C85BA249047E200135C1C = {
 						CreatedOnToolsVersion = 11.5;
@@ -294,7 +318,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		65441A4B2491AA80009BECF8 /* ShellScript */ = {
+		5A86422CAE3C40CA46941F6F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-mmapp/Pods-mmapp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-mmapp/Pods-mmapp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mmapp/Pods-mmapp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		650372A0249422F800D50066 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -311,6 +352,28 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\ncd \"$SRCROOT/../shared/build/xcode-frameworks\"\n./gradlew :shared:packForXCode -PXCODE_CONFIGURATION=${CONFIGURATION}\n";
 		};
+		8163E5B94206EF1D754F4235 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-mmapp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -319,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				653C85A9249047DF00135C1C /* AppDelegate.swift in Sources */,
+				650372A2249461DA00D50066 /* MapView.swift in Sources */,
 				653C85AB249047DF00135C1C /* SceneDelegate.swift in Sources */,
 				653C85AD249047DF00135C1C /* ContentView.swift in Sources */,
 			);
@@ -483,12 +547,17 @@
 		};
 		653C85D0249047E200135C1C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 708E695296E03DEFB3587CAF /* Pods-mmapp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"mmapp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../shared/build/xcode-frameworks";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/../shared/build/xcode-frameworks",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = mmapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -496,6 +565,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.dellisd.mmapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "mmapp/mmapp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -503,12 +574,17 @@
 		};
 		653C85D1249047E200135C1C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DE84DCEDDD4F8FF438B485B /* Pods-mmapp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"mmapp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../shared/build/xcode-frameworks";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)../shared/build/xcode-frameworks",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = mmapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -516,6 +592,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.dellisd.mmapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "mmapp/mmapp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

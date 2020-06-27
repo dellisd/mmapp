@@ -2,7 +2,6 @@ package io.dellisd.github.mmapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.mapbox.mapboxsdk.Mapbox
 import com.mapbox.mapboxsdk.maps.Style
 import com.mapbox.mapboxsdk.style.layers.FillLayer
 import io.dellisd.github.mmapp.databinding.ActivityMainBinding
@@ -20,6 +19,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.mapView.getMapAsync { map ->
             map.setStyle(Style.LIGHT) { style ->
+                val testSource = makeTestSource("test")
                 style.addSource(testSource)
                 style.addLayer(FillLayer("test-fill", testSource.sourceId))
             }

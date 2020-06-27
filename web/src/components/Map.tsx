@@ -1,7 +1,7 @@
 import React from "react";
 import ReactMapGL, { ViewState, Source, Layer } from "react-map-gl";
 import { io } from "mmapp-shared";
-import testSource = io.dellisd.github.mmapp.testSource;
+import makeTestSource = io.dellisd.github.mmapp.makeTestSource;
 import { AutoSizer } from "react-virtualized";
 import "mapbox-gl/dist/mapbox-gl.css";
 
@@ -12,6 +12,8 @@ export const Map = () => {
     zoom: 11,
     bearing: -30,
   });
+
+  const testSource = makeTestSource("test");
 
   return (
     <AutoSizer>

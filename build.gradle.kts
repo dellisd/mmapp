@@ -20,5 +20,6 @@ allprojects {
         google()
         jcenter()
         maven(url = "https://dl.bintray.com/kotlin/kotlin-eap")
+        maven(url = "https://kotlin.bintray.com/native-xcode")
     }
 }

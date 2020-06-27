@@ -1,0 +1,6 @@
+language = Objective-C
+package = cocoapods.Mapbox
+modules = Mapbox
+linkerOpts = -F/Users/derek/mmapp/ios/Pods/Mapbox-iOS-SDK/dynamic -framework Mapbox
+
+#disableDesignatedInitializerChecks = true
