@@ -71,16 +71,16 @@ kotlin {
     js {
         useCommonJs()
         browser()
+
+        binaries.executable()
     }
 
     sourceSets["commonMain"].dependencies {
-        implementation("org.jetbrains.kotlin:kotlin-stdlib-common")
-        implementation("io.github.dellisd.spatialk:geojson:0.0.1-SNAPSHOT")
-        implementation("io.github.dellisd.spatialk:geojson-dsl:0.0.1-SNAPSHOT")
+        implementation("io.github.dellisd.spatialk:geojson:0.0.2-SNAPSHOT")
+        implementation("io.github.dellisd.spatialk:geojson-dsl:0.0.2-SNAPSHOT")
     }
 
     sourceSets["androidMain"].dependencies {
-        implementation("org.jetbrains.kotlin:kotlin-stdlib")
         api("com.mapbox.mapboxsdk:mapbox-android-sdk:9.2.0")
     }
 

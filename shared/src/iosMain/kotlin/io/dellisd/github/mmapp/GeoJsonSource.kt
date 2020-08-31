@@ -14,6 +14,10 @@ actual class GeoJsonSource actual constructor(actual val sourceId: String, featu
 
     val source = MGLShapeSource(sourceId, null, null)
 
+    actual fun setGeoJson(json: String) {
+        TODO("Not implemented")
+    }
+
     actual fun setGeoJson(feature: Feature) {
         source.shape = feature.toMapbox() as MGLShape
     }
@@ -25,9 +29,5 @@ actual class GeoJsonSource actual constructor(actual val sourceId: String, featu
     actual fun setGeoJson(featureCollection: FeatureCollection) {
         source.shape = feature.toMapbox() as MGLShape
     }
-
-    actual fun setGeoJson(json: String) {
-        TODO("Not implemented")
-    }
-
 }
+

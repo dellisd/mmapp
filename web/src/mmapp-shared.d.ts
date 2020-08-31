@@ -2,7 +2,7 @@ declare module "mmapp-shared" {
     type Nullable<T> = T | null | undefined
     namespace io.dellisd.github.mmapp {
         class GeoJsonSource {
-            constructor(id: string)
+            constructor(id: string, features: Nullable<any>)
             readonly sourceId: string;
             readonly id: string;
             data: string;
@@ -13,7 +13,6 @@ declare module "mmapp-shared" {
             setGeoJson(json: string): void
         }
 
-        const feature: any;
-        const testSource: GeoJsonSource;
+        function makeTestSource(id: string): GeoJsonSource
     }
 }

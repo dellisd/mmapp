@@ -6,7 +6,10 @@ import io.github.dellisd.spatialk.geojson.Geometry
 import com.mapbox.mapboxsdk.style.sources.GeoJsonSource as MapboxGeoJsonSource
 
 
-actual class GeoJsonSource actual constructor(actual val sourceId: String, features: FeatureCollection?) : MapboxGeoJsonSource(sourceId) {
+actual class GeoJsonSource actual constructor(
+    @get:JvmName("getId_") actual val id: String,
+    features: FeatureCollection?
+) : MapboxGeoJsonSource(id) {
     actual fun setGeoJson(feature: Feature) {
         setGeoJson(feature.toMapbox())
     }
