@@ -51,7 +51,7 @@ struct MapView: UIViewRepresentable {
         func mapView(_ mapView: MGLMapView, didFinishLoading style: MGLStyle) {
             
             
-            let shapeSource = TestSourceKt.makeTestSource(id: "test").source
+            let shapeSource = TestSourceKt.makeTestSource(id: "test")
             mapView.style?.addSource(shapeSource)
             
             let fillLayer = MGLFillStyleLayer(identifier: "buildingFillLayer", source: shapeSource)

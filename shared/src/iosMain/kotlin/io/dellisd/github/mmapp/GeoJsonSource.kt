@@ -8,24 +8,25 @@ import cocoapods.Mapbox.MGLShapeSourceMeta
 import cocoapods.Mapbox.MGLSource
 import cocoapods.Mapbox.MGLShape
 
-actual class GeoJsonSource actual constructor(actual val id: String, features: FeatureCollection?) {
+actual class GeoJsonSource actual constructor(actual val id: String, features: FeatureCollection?)
+    : MGLShapeSource(id, features?.toMapbox() as? MGLShape, null) {
 
-    val source = MGLShapeSource(id, null, null)
+    //val source = MGLShapeSource(id, null, null)
 
     actual fun setGeoJson(json: String) {
         TODO("Not implemented")
     }
 
     actual fun setGeoJson(feature: Feature) {
-        source.shape = feature.toMapbox() as MGLShape
+        shape = feature.toMapbox() as MGLShape
     }
 
     actual fun setGeoJson(geometry: Geometry) {
-        source.shape = feature.toMapbox() as MGLShape
+        shape = feature.toMapbox() as MGLShape
     }
 
     actual fun setGeoJson(featureCollection: FeatureCollection) {
-        source.shape = feature.toMapbox() as MGLShape
+        shape = feature.toMapbox() as MGLShape
     }
 }
 

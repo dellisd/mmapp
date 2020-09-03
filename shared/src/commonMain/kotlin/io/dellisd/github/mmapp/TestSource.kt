@@ -5,7 +5,7 @@ import kotlin.js.JsExport
 
 @JsExport
 fun makeTestSource(id: String): GeoJsonSource {
-    val source = GeoJsonSource("test", null)
-    source.setGeoJson(feature)
+    val source = GeoJsonSource("test", featureCollection { +feature })
+    //source.setGeoJson(feature)
     return source
 }
