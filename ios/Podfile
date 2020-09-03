@@ -3,4 +3,5 @@ use_frameworks!
 
 target 'mmapp' do
     pod 'Mapbox-iOS-SDK' => '~> 5.9'
+    pod 'shared', :path => '../shared'
 end

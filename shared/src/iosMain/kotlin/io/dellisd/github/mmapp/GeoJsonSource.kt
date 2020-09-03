@@ -1,18 +1,16 @@
 package io.dellisd.github.mmapp
 
-import cocoapods.Mapbox.MGLShape
 import io.github.dellisd.spatialk.geojson.Feature
 import io.github.dellisd.spatialk.geojson.FeatureCollection
 import io.github.dellisd.spatialk.geojson.Geometry
 import cocoapods.Mapbox.MGLShapeSource
 import cocoapods.Mapbox.MGLShapeSourceMeta
 import cocoapods.Mapbox.MGLSource
-import kotlinx.cinterop.ObjCObjectBase
-import platform.Foundation.NSURL
+import cocoapods.Mapbox.MGLShape
 
-actual class GeoJsonSource actual constructor(actual val sourceId: String, features: FeatureCollection?) {
+actual class GeoJsonSource actual constructor(actual val id: String, features: FeatureCollection?) {
 
-    val source = MGLShapeSource(sourceId, null, null)
+    val source = MGLShapeSource(id, null, null)
 
     actual fun setGeoJson(json: String) {
         TODO("Not implemented")

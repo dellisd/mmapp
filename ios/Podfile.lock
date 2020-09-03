@@ -2,19 +2,27 @@ PODS:
   - Mapbox-iOS-SDK (5.9.0):
     - MapboxMobileEvents (= 0.10.2)
   - MapboxMobileEvents (0.10.2)
+  - shared (1.0):
+    - Mapbox-iOS-SDK (~> 5.9)
 
 DEPENDENCIES:
   - Mapbox-iOS-SDK (~> 5.9)
+  - shared (from `../shared`)
 
 SPEC REPOS:
   trunk:
     - Mapbox-iOS-SDK
     - MapboxMobileEvents
 
+EXTERNAL SOURCES:
+  shared:
+    :path: "../shared"
+
 SPEC CHECKSUMS:
   Mapbox-iOS-SDK: a5915700ec84bc1a7f8b3e746d474789e35b7956
   MapboxMobileEvents: 2bc0ca2eedb627b73cf403258dce2b2fa98074a6
+  shared: 338aec20de24fa7457ea173d90aa218b7620b228
 
-PODFILE CHECKSUM: 316ba426b416969b11976a623fd3089568611348
+PODFILE CHECKSUM: b342b300588771249d01256d5e59b58771ee05f0
 
 COCOAPODS: 1.9.3

@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 plugins {
     id("com.android.library")
     kotlin("multiplatform")
+    kotlin("native.cocoapods")
 }
 
 repositories {
@@ -41,6 +42,8 @@ android {
     }
 }
 
+version = "1.0"
+
 kotlin {
     //select iOS target platform depending on the Xcode environment variables
     val iOSTarget: (String, KotlinNativeTarget.() -> Unit) -> KotlinNativeTarget =
@@ -49,21 +52,19 @@ kotlin {
         else
             ::iosX64
 
-    iOSTarget("ios") {
-        binaries {
-            framework {
-                baseName = "Shared"
-            }
-        }
-        compilations.getByName("main") {
-            cinterops.create("Mapbox") {
-                defFile(project.file("src/iosMain/defs/Mapbox.def"))
+    // Currently the cocoapods plugin doesn't support the `ios()` convenience method.
+    iOSTarget("ios") {}
 
-                val frameworks = listOf(project.file("../ios/Pods/Mapbox-iOS-SDK/dynamic"))
-                val frameworkOpts = frameworks.map { "-F${it.path}" }
-                compilerOpts(*frameworkOpts.toTypedArray())
-            }
-        }
+    cocoapods {
+        summary = "mmapp framework"
+        homepage = "https://github.com/dellisd/mmapp"
+        podfile = project.file("../ios/Podfile")
+
+        frameworkName = "Shared"
+
+        ios.deploymentTarget = "13.5"
+
+        pod("Mapbox-iOS-SDK", "~> 5.9", moduleName = "Mapbox")
     }
 
     android()
@@ -85,37 +86,36 @@ kotlin {
     }
 
     sourceSets["iosMain"].dependencies {
-        implementation("org.jetbrains.kotlin.native.xcode:kotlin-native-xcode-11-4-workaround:1.3.72.0")
     }
 }
 
-val packForXcode by tasks.creating(Sync::class) {
-    val targetDir = File(buildDir, "xcode-frameworks")
-
-    /// selecting the right configuration for the iOS
-    /// framework depending on the environment
-    /// variables set by Xcode build
-    val mode = System.getenv("CONFIGURATION") ?: "DEBUG"
-    val framework = kotlin.targets
-        .getByName<KotlinNativeTarget>("ios")
-        .binaries.getFramework(mode)
-    inputs.property("mode", mode)
-    dependsOn(framework.linkTask)
-
-    from({ framework.outputDirectory })
-    into(targetDir)
-
-    /// generate a helpful ./gradlew wrapper with embedded Java path
-    doLast {
-        val gradlew = File(targetDir, "gradlew")
-        gradlew.writeText(
-            "#!/bin/bash\n"
-                    + "export 'JAVA_HOME=${System.getProperty("java.home")}'\n"
-                    + "cd '${rootProject.rootDir}'\n"
-                    + "./gradlew \$@\n"
-        )
-        gradlew.setExecutable(true, false)
-    }
-}
-
-tasks.getByName("build").dependsOn(packForXcode)
+//val packForXcode by tasks.creating(Sync::class) {
+//    val targetDir = File(buildDir, "xcode-frameworks")
+//
+//    /// selecting the right configuration for the iOS
+//    /// framework depending on the environment
+//    /// variables set by Xcode build
+//    val mode = System.getenv("CONFIGURATION") ?: "DEBUG"
+//    val framework = kotlin.targets
+//        .getByName<KotlinNativeTarget>("ios")
+//        .binaries.getFramework(mode)
+//    inputs.property("mode", mode)
+//    dependsOn(framework.linkTask)
+//
+//    from({ framework.outputDirectory })
+//    into(targetDir)
+//
+//    /// generate a helpful ./gradlew wrapper with embedded Java path
+//    doLast {
+//        val gradlew = File(targetDir, "gradlew")
+//        gradlew.writeText(
+//            "#!/bin/bash\n"
+//                    + "export 'JAVA_HOME=${System.getProperty("java.home")}'\n"
+//                    + "cd '${rootProject.rootDir}'\n"
+//                    + "./gradlew \$@\n"
+//        )
+//        gradlew.setExecutable(true, false)
+//    }
+//}
+//
+//tasks.getByName("build").dependsOn(packForXcode)

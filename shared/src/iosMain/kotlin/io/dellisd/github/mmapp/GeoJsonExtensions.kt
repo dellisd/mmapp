@@ -75,10 +75,10 @@ fun Feature.toMapbox(): MGLFeatureProtocol? {
     // TODO: support for complex object / array properties???
     val dict = properties.entries.map { (key, value) ->
         return@map when {
-            value.booleanOrNull != null -> key to value.boolean
-            value.doubleOrNull != null -> key to value.double
-            value.longOrNull != null -> key to value.long
-            value.contentOrNull != null -> key to value.content
+            value.jsonPrimitive.booleanOrNull != null -> key to value.jsonPrimitive.boolean
+            value.jsonPrimitive.doubleOrNull != null -> key to value.jsonPrimitive.double
+            value.jsonPrimitive.longOrNull != null -> key to value.jsonPrimitive.long
+            value.jsonPrimitive.contentOrNull != null -> key to value.jsonPrimitive.content
             else -> key to null
         }
     }.toMap()

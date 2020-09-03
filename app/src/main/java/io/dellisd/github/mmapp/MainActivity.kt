@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
             map.setStyle(Style.LIGHT) { style ->
                 val testSource = makeTestSource("test")
                 style.addSource(testSource)
-                style.addLayer(FillLayer("test-fill", testSource.sourceId))
+                style.addLayer(FillLayer("test-fill", testSource.id))
             }
         }
     }

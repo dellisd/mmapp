@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4FD8FC736120868BEA3820AD /* Pods_mmapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A71DB3B1E25C2CB53186142 /* Pods_mmapp.framework */; };
-		6503729E249422EF00D50066 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65441A4F2491BEB8009BECF8 /* Shared.framework */; };
-		6503729F249422EF00D50066 /* Shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 65441A4F2491BEB8009BECF8 /* Shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		650372A2249461DA00D50066 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650372A1249461DA00D50066 /* MapView.swift */; };
 		653C85A9249047DF00135C1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653C85A8249047DF00135C1C /* AppDelegate.swift */; };
 		653C85AB249047DF00135C1C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653C85AA249047DF00135C1C /* SceneDelegate.swift */; };
@@ -47,7 +45,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				655C95692492E6AF00D769FD /* (null) in Embed Frameworks */,
-				6503729F249422EF00D50066 /* Shared.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,6 +69,7 @@
 		653C85CC249047E200135C1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65441A472491A9DB009BECF8 /* shared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = shared.framework; path = "../shared/build/xcode-frameworks/shared.framework"; sourceTree = "<group>"; };
 		65441A4F2491BEB8009BECF8 /* Shared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Shared.framework; path = "../shared/build/xcode-frameworks/Shared.framework"; sourceTree = "<group>"; };
+		657A36D925006DDF002142C6 /* mmapp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mmapp-Bridging-Header.h"; sourceTree = "<group>"; };
 		6DE84DCEDDD4F8FF438B485B /* Pods-mmapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mmapp.release.xcconfig"; path = "Target Support Files/Pods-mmapp/Pods-mmapp.release.xcconfig"; sourceTree = "<group>"; };
 		708E695296E03DEFB3587CAF /* Pods-mmapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mmapp.debug.xcconfig"; path = "Target Support Files/Pods-mmapp/Pods-mmapp.debug.xcconfig"; sourceTree = "<group>"; };
 		8A71DB3B1E25C2CB53186142 /* Pods_mmapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mmapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,7 +81,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FD8FC736120868BEA3820AD /* Pods_mmapp.framework in Frameworks */,
-				6503729E249422EF00D50066 /* Shared.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +143,7 @@
 				653C85B3249047E200135C1C /* LaunchScreen.storyboard */,
 				653C85B6249047E200135C1C /* Info.plist */,
 				653C85B0249047E200135C1C /* Preview Content */,
+				657A36D925006DDF002142C6 /* mmapp-Bridging-Header.h */,
 			);
 			path = mmapp;
 			sourceTree = "<group>";
@@ -199,7 +197,6 @@
 				653C85A3249047DE00135C1C /* Resources */,
 				655C956A2492E6AF00D769FD /* Embed Frameworks */,
 				5A86422CAE3C40CA46941F6F /* [CP] Embed Pods Frameworks */,
-				650372A0249422F800D50066 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -334,23 +331,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mmapp/Pods-mmapp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
-		};
-		650372A0249422F800D50066 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\ncd \"$SRCROOT/../shared/build/xcode-frameworks\"\n./gradlew :shared:packForXCode -PXCODE_CONFIGURATION=${CONFIGURATION}\n";
 		};
 		8163E5B94206EF1D754F4235 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -554,10 +534,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"mmapp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SRCROOT)/../shared/build/xcode-frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = mmapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -581,10 +558,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"mmapp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SRCROOT)../shared/build/xcode-frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = mmapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
